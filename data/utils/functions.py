@@ -1,0 +1,3 @@
+
+def hasElemant(kalame,char) :
+    
