@@ -5,12 +5,21 @@ import json
 #     words = json.load(f)
 
 
-
+words = []
 
 with open('data/words.txt',"r",encoding="utf8") as f:
     for line in f:
-        print(line)
-    
+         w, n = (line.split())
+         if  int(n) >= 1000 and "\u200c" not in w:
+             words.append(w)
+
+
+
+for w in words:        
+    print(w)
+
+
+
 L5Words = []
 L4Words = []
 
