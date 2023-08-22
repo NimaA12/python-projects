@@ -1,0 +1,5 @@
+print("LEFT ARROW : left")
+print("Right ARROW : right")
+print("UP ARROW : up")
+print("DOWN ARROW : down")
+print("ESC KYE : exit")

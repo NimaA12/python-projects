@@ -1,11 +1,16 @@
 
 import json
 
-kalame = (input("kalame ra hads bezanid"))
+# with open('data/words.json',"r",encoding="utf8") as f:
+#     words = json.load(f)
 
-with open('data/words.json',encoding="utf8") as f:
-    words = json.load(f)
 
+
+
+with open('data/words.txt',"r",encoding="utf8") as f:
+    for line in f:
+        print(line)
+    
 L5Words = []
 L4Words = []
 
@@ -14,14 +19,7 @@ for w in words:
         L4Words.append( w )
     if len (w) == 5 :
         L5Words.append( w )
-# print(words)
-# print(len(words))
 
-
-#print (L5Words)
-
-if kalame in words :
-    print ("dorst")
 
 with open( 'data/5_char_words.json' , 'w' , encoding='utf8') as f:
     json.dump(L5Words,f,ensure_ascii=False,indent=4)

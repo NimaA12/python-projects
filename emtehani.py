@@ -1,20 +1,8 @@
 
 import json
 from colorama import *
-
+import random
 from  utils.functions import hasElemant
-
-
-with open('data/words.json',encoding="utf8") as f:
-    words = json.load(f)
-
-
-
-init()
-b = input(" yek harf hads beyanid  : ")
-#a = print(b.split())
-
-kalame = "آبان"
 
 
 def printColored (kalame,guess):
@@ -30,8 +18,25 @@ def printColored (kalame,guess):
         else :
             print(Back.RED,(guess[j]),Back.RED,end="" )
         print(Back.BLACK,"",end="")
-    
 
-printColored ("hhsuhde","f")
+
+
+with open('data/5_char_words.json',encoding="utf8") as f:
+    words = json.load(f)
+
+init()
+#a = print(b.split())
+
+kalame = random.choice(words)
+
+print("taghalob",kalame)
+
+
+for i in range(4):
+    b = input(" yek harf hads beyanid  : ")
+    printColored (kalame=kalame,guess=b)
+    print()
+    print()
+
 
 deinit()
