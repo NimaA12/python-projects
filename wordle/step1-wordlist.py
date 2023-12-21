@@ -8,6 +8,7 @@ import json
 
 
 with open('data/words.txt',"r",encoding="utf8") as f:
+    a=f.readline()
     for line in f:
         print(line)
     
