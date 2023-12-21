@@ -3,6 +3,19 @@ import json
 from colorama import *
 import random
 from  utils.functions import hasElemant
+import sys
+
+print()
+print()
+
+
+
+print(Back.GREEN, "hello welcome to wordle ")
+print(Back.BLACK,"",end="")
+
+print()
+print()
+print()
 
 
 def printColored (kalame,guess):
@@ -33,10 +46,33 @@ print("taghalob",kalame)
 
 
 for i in range(4):
-    b = input(" yek harf hads beyanid  : ")
+    b = input("\033[1;36;40m kalame ra hads bezanid : \033[0m")
+    if b == kalame :
+        print(Back.GREEN,"barande shodi........")
+        print(Back.BLACK,"",end="")
+        sys.exit()
+    print(Back.BLACK,"",end="")
+    if len(b) != 5 :
+        b = input("faghat kaleme hay 5 harfi ghabool mishavad lotfan dobare talash konid ... : ")
+   # if b in words :
+      #  print("dar list hast")
     printColored (kalame=kalame,guess=b)
     print()
     print()
+
+
+if b != kalame :
+    print(Back.RED," bakhti ")
+    print()
+    print()
+    print()
+
+    print(Back.BLUE, "kalame : " ,kalame )    
+
+print(Back.BLACK,"",end="")
+
+
+
 
 
 deinit()
