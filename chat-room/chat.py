@@ -29,9 +29,13 @@ class ChatRoom:
         pass # TODO:
 
 
-# TODO: make data persistent! 
 
+# TODO1: make users persistent with a file based user list 
 users = []
+# TODO1: load all users from json file
+
+
+
 chat_rooms = []
 
 
@@ -59,16 +63,21 @@ def signup():
         return 'bad request!', 400
     
     users.append(User(username,email,password))
+    # TODO1: save all users to json file
+
 
     return jsonify("user created!")
 
 
 @app.route("/api/see-all-users")
 def all_users():
-    user_names = []
+    users_dictionary = []
     for u in users:
-        user_names.append(u.username)
-    return jsonify(user_names)
+        users_dictionary.append({
+            "username":u.username,
+            "email":u.email
+        })
+    return jsonify(users_dictionary)
     
 
 
