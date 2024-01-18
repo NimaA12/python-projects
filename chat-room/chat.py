@@ -32,7 +32,7 @@ class ChatRoom:
 
 # TODO1: make users persistent with a file based user list 
 users = []
-# TODO1: load all users from json file
+# TODO1: load all users from json file if file exist
 
 
 
@@ -66,7 +66,7 @@ def signup():
     # TODO1: save all users to json file
 
 
-    return jsonify("user created!")
+    return jsonify("user created!"), 201
 
 
 @app.route("/api/see-all-users")
@@ -84,7 +84,7 @@ def all_users():
 @app.route("/<path>")
 def static_files(path):
     extention = path.split(".")[-1]
-    if extention in ["html","css","js","ogg"]:
+    if extention in ["html","css","js","ogg","jpg"]:
         return send_from_directory('static', path )
     else:
         return send_from_directory('static', path + ".html")

@@ -46,3 +46,23 @@ body {
   button:hover {
     background-color: #0056b3;
   }
+
+  img {
+    width: 100px;
+    height: auto;}
+
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;}
+
+.bg-img{
+  position: absolute;
+  /* display: fixed; */
+  top:0;
+  min-width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  z-index: -100;
+  opacity: 0.5;
+}
