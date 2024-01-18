@@ -30,9 +30,9 @@ class ChatRoom:
 
 
 
-# TODO1: make users persistent with a file based user list 
 users = []
 # TODO1: load all users from json file if file exist
+# TODO1: make users persistent with a file based user list 
 
 
 
@@ -58,13 +58,12 @@ def signup():
     email = request.args.get('email') 
     password = request.args.get('password') 
     if not unique_user(email,username) :
-        return 'username of email alredy exist!', 409
+        return 'username or email alredy exist!', 409
     if email==None or email == None or password==None:
         return 'bad request!', 400
     
     users.append(User(username,email,password))
     # TODO1: save all users to json file
-
 
     return jsonify("user created!"), 201
 
